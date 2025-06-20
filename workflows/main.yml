@@ -1,0 +1,12 @@
+//The data in the metadata file defines the inputs, outputs, and runs configuration for your action
+
+name: "Build & Release"   # You can name it as you want
+on:
+  pull_request:
+    branches:
+      - dev
+      - test
+  push:
+    branches:
+      - dev
+      - test 
