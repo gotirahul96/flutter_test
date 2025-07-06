@@ -66,7 +66,8 @@ jobs:  # Telling what jobs we need to happen
 #all the dependencies specified in your pubspec.yaml file.
       - name: build apk and split per abi
         run: flutter build apk --release --split-per-abi
-      - run: 
+      - name: Build IPA
+        run: | 
           flutter build ios --no-codesign && \
           cd build/ios/iphoneos && \
           mkdir -p Payload && \
