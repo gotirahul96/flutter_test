@@ -80,6 +80,6 @@ jobs:  # Telling what jobs we need to happen
         with:
           artifacts: "build/app/outputs/apk/release/*,build/ios/iphonesos/app/ipa"
           tag: v1.0.${{ github.run_number }}
-          token ${{ secrets.Token }}
-          
+          token: ${{ secrets.Token }}
+
 
