@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:testapp/animation_Screen.dart';
+import 'package:testapp/bottom_navigator/dashboard.dart';
 import 'package:testapp/counter/counter_page.dart';
 import 'package:testapp/login_Screen.dart';
+import 'package:testapp/new_bottombar/bottom_wrapper.dart';
 
 import 'counter/counter_view.dart';
 
@@ -22,7 +24,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'Flutter Demo',
       debugShowCheckedModeBanner: false,
-      home: LoginScreen(),
+      home: BottomWrapper(),
     );
   }
 }

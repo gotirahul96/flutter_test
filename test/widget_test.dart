@@ -126,6 +126,7 @@ void main() {
 
 
   testWidgets('Displays List if users', (tester) async {
+    //WidgetTester - Class that programmatically interacts with widgets and the test environment.;
      // Stub the getUserData to return immediately with predefined users
     when(() => mockRepository.getUserData())
         .thenAnswer((_) async => counterCubit.userModel);
@@ -134,7 +135,7 @@ void main() {
     testCubit.userModel = await mockRepository.getUserData();
     
     //Pumps the widget
-       await tester.pumpWidget(
+   await tester.pumpWidget(
       MaterialApp(
         home: BlocProvider<CounterCubit>(
           create: (_) => testCubit,
@@ -142,7 +143,7 @@ void main() {
         ),
       ),
     );
-
+   
     expect(find.byType(CircularProgressIndicator), findsOneWidget);
     await tester.pump();
     CounterCubit(0).userModel = [UserModel(id: 1,name: 'Rahul',email: 'timepass.com')];
@@ -151,15 +152,13 @@ void main() {
     //it will keep calling pump untill future is resolved
 
     await tester.pumpAndSettle();
-
+    //tester.pumpBenchmark();
+    
     expect(find.byType(ListView), findsOneWidget);
     expect(find.text('Rahul'), findsOneWidget);
     expect(find.text('John'), findsOneWidget);
-    
-
-
   });
-
+ 
   //Post Test
   //Tear down is called after every test
   // test -> testDown -> test -> testDown -> test -> testDown

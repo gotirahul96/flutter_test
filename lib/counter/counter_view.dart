@@ -72,6 +72,10 @@ class _CounterViewState extends State<CounterView> with WidgetsBindingObserver{
 //   d.fly();     // I am flying
 //   d.swim();    // I am swimming
 // }
+
+//What is static?
+//The static keyword means that a variable or method belongs to the class itself, 
+//not to individual objects created from the class.
  
   //******************************************************** */
  //implements
@@ -200,7 +204,8 @@ class _CounterViewState extends State<CounterView> with WidgetsBindingObserver{
 // to pull shared data from ancestor widgets.
 
 //************************************************************ */
-//An InheritedWidget is simply a way to share data with all of its descendant widgets without having to pass that data through every constructor. 
+//An InheritedWidget is simply a way to share data with all of its descendant widgets without having to pass that 
+//data through every constructor. 
 //Think of it as a special container high in the tree that any child can tap into. When the shared data changes,
 // only those children that asked for it rebuild.
 //************************************************************ */
@@ -456,7 +461,7 @@ Future<void> _getBatteryLevel() async {
   } on PlatformException catch (e) {
     batteryLevel = "Failed to get battery level: '${e.message}'.";
   }
-
+  
   setState(() {
     _batteryLevel = batteryLevel;
   });

@@ -281,7 +281,9 @@ void main() {
         () async {
           //arrange
           when(() => mockHttpClient.get(Uri.parse('https://jsonplaceholder.typicode.com/users'))).thenAnswer((invocation) async {
+            
             return Response('{}', 400);
+           
           });
           //act
           final  userList = userRepository.getUserData();
